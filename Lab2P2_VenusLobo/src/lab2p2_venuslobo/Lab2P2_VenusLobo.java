@@ -50,7 +50,7 @@ public class Lab2P2_VenusLobo {
             boolean usuarioEncontrado = false;
 
             for (Usuario usuario : ListaUsuarios) {
-                if (usuario.getNombre().equals(usuarioIngresado.getNombre()) && usuario.getContrasena().equals(usuarioIngresado.getContrasena())) {
+                if (usuario.getNombreUsuario().equals(usuarioIngresado.getNombreUsuario()) && usuario.getContrasena().equals(usuarioIngresado.getContrasena())) {
                     System.out.println("Usuario valido");
                     usuarioValido = true;
                     usuarioEncontrado = true;

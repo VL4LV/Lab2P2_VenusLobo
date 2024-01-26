@@ -19,31 +19,28 @@ public class Usuario {
     }
 
     //MUTADORES 
-    public void setNombre(String name)  {
-        
-    }
-
-    public String getNombre() {
+    public String getNombreUsuario() {
         return nombreUsuario;
     }
 
-    public void setContrasena(String nuevaContrasena)  {
-        if (nuevaContrasena.length() >= 8) {
-            this.contrasena = nuevaContrasena;
-        } else {
-            System.out.println("La contraseña debe tener al menos 8 caracteres.");
-        }
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
-    public String getContrasena() throws Exception {
+    public String getContrasena() {
         return contrasena;
     }
 
-    public void setTipoUsuario(String tipoUsu) {
-        this.tipoUsuario = tipoUsu;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getTipoUsuario() {
         return tipoUsuario;
     }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
 }
