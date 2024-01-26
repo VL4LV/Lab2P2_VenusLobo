@@ -4,22 +4,18 @@
  */
 package lab2p2_venuslobo;
 
-import java.util.ArrayList;
-
-/**
- *
- * @author ADMIN
- */
 public class Usuario {
 
     //ATRIBUTOS 
     public String nombreUsuario;
     public String contrasena;
+    public String tipoUsuario;
 
     //CONSTRUCTOR
-    public Usuario(String nombreUsu, String contra) {
+    public Usuario(String nombreUsu, String contra, String tipoUsu) {
         this.nombreUsuario = nombreUsu;
         this.contrasena = contra;
+        this.tipoUsuario = tipoUsu;
     }
 
     //MUTADORES 
@@ -48,15 +44,22 @@ public class Usuario {
         if (nuevaContrasena.length() >= 8) {
             this.contrasena = nuevaContrasena;
         } else {
-            throw new IllegalArgumentException("La contraseña debe tener al menos 8 caracteres.");
+            throw new Exception("La contraseña debe tener al menos 8 caracteres.");
         }
     }
 
-    public String getContrasena() {
+    public String getContrasena() throws Exception {
         if (contrasena == null || contrasena.length() < 8) {
-            throw new IllegalStateException("La contraseña no cumple con los requisitos mínimos.");
+            throw new Exception("La contraseña no cumple con los requisitos minimos.");
         }
         return contrasena;
     }
 
+    public void setTipoUsuario(String tipoUsu) {
+        this.tipoUsuario = tipoUsu;
+    }
+
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
 }
