@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package lab2p2_venuslobo;
-
 public class Usuario {
 
     //ATRIBUTOS 

@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 public class Lab2P2_VenusLobo {
 
+   static ArrayList<Libro> libros = new ArrayList();
+
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
 
@@ -71,8 +73,9 @@ public class Lab2P2_VenusLobo {
                     System.out.println("---Bienvenido estudiante---");
                     System.out.println("1. Listar recursos");
                     System.out.println("2. Salir");
+                    System.out.print("Que vamos hacer: ");
                     int opcEstu = sc.nextInt();
-                    
+
                     break;
 
                 case "profesor":
@@ -81,6 +84,7 @@ public class Lab2P2_VenusLobo {
                     System.out.println("1. Listar recursos");
                     System.out.println("2. Crear recursos");
                     System.out.println("3. Salir");
+                    System.out.print("Que vamos hacer: ");
                     int opcProfe = sc.nextInt();
 
                     break;
@@ -93,14 +97,62 @@ public class Lab2P2_VenusLobo {
                     System.out.println("3. Eliminar recursos");
                     System.out.println("4. Modificar recursos");
                     System.out.println("5. Salir");
+                    System.out.print("Que vamos hacer: ");
                     int opcBibli = sc.nextInt();
-                    
+
+                    switch (opcBibli) {
+                        case 1:
+
+                            break;
+
+                        case 2:
+                            System.out.println("1. Libro");
+                            System.out.println("2. Articulo");
+                            System.out.println("3. Curso en linea");
+                            System.out.println("4. Conferencia virtual");
+                            System.out.println("Que tipo de curso quiere crear: ");
+                            int tipoCurso = sc.nextInt();
+
+                            switch (tipoCurso) {
+                                case 1:
+                                    System.out.println("Ingrese titulo del libro: ");
+                                    String titulo = sc.nextLine();
+                                    System.out.println("Ingrese autor del libro: ");
+                                    String autor = sc.nextLine();
+                                    System.out.println("Ingrese el genero del libro: ");
+                                    String genero = sc.nextLine();
+                                    System.out.println("Ingrese el año de publifcacion:");
+                                    int anio = sc.nextInt();
+                                    System.out.println("Ingrese el estado del libro: ");
+                                    String disponibilidad = sc.nextLine();
+
+                                    //AGREGAR A LA LISTA 
+                                    Libro nuevoLibro = new Libro(titulo, autor, genero, anio);
+                                    libros.add(nuevoLibro);
+
+                                    break;
+                                default:
+                                    throw new AssertionError();
+                            }
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
+
                     break;
-                    
+
                 default:
                     System.out.println("Este tipo de usuario no este disponible.");
                     break;
             }
         }
     }
+
+    //METODOS 
+    public static void listas(ArrayList lista) {
+        for (Object t : lista) {
+            System.out.println(lista.indexOf(t) + "- " + t);
+        }
+    }
+
 }
