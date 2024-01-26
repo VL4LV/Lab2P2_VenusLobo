@@ -7,10 +7,10 @@ public class Conferencia {
     private String tituloConferencia;  
     private String conferencia; 
     private String fecha; 
-    private int duracion; 
+    private String duracion; 
     private String enlace; 
 
-    public Conferencia(String tituloConferencia, String conferencia, String fecha, int duracion, String enlace) {
+    public Conferencia(String tituloConferencia, String conferencia, String fecha, String duracion, String enlace) {
         this.tituloConferencia = tituloConferencia;
         this.conferencia = conferencia;
         this.fecha = fecha;
@@ -42,11 +42,11 @@ public class Conferencia {
         this.fecha = fecha;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 

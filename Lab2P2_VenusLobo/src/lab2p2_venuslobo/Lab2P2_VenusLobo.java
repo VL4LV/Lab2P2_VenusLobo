@@ -13,7 +13,10 @@ import java.util.Scanner;
  */
 public class Lab2P2_VenusLobo {
 
-   static ArrayList<Libro> libros = new ArrayList();
+    static ArrayList<Libro> libros = new ArrayList();
+    static ArrayList<Articulo> articulos = new ArrayList();
+    static ArrayList<Cursos_Linea> cursos = new ArrayList();
+    static ArrayList<Conferencia> conferencias = new ArrayList();
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
@@ -90,56 +93,111 @@ public class Lab2P2_VenusLobo {
                     break;
 
                 case "bibliotecario":
-                    System.out.println("");
-                    System.out.println("---Bienvenido bibliotecario---");
-                    System.out.println("1. Listar recursos");
-                    System.out.println("2. Crear recursos");
-                    System.out.println("3. Eliminar recursos");
-                    System.out.println("4. Modificar recursos");
-                    System.out.println("5. Salir");
-                    System.out.print("Que vamos hacer: ");
-                    int opcBibli = sc.nextInt();
+                    int opcBibli;
+                    do {
+                        System.out.println("");
+                        System.out.println("---Bienvenido bibliotecario---");
+                        System.out.println("1. Listar recursos");
+                        System.out.println("2. Crear recursos");
+                        System.out.println("3. Eliminar recursos");
+                        System.out.println("4. Modificar recursos");
+                        System.out.println("5. Salir");
+                        System.out.print("Que vamos hacer: ");
 
-                    switch (opcBibli) {
-                        case 1:
+                        opcBibli = sc.nextInt();
 
-                            break;
+                        switch (opcBibli) {
+                            case 1:
+                                for (Libro lib : libros) {
+                                    System.out.println(lib.toString());
+                                }
+                                break;
 
-                        case 2:
-                            System.out.println("1. Libro");
-                            System.out.println("2. Articulo");
-                            System.out.println("3. Curso en linea");
-                            System.out.println("4. Conferencia virtual");
-                            System.out.println("Que tipo de curso quiere crear: ");
-                            int tipoCurso = sc.nextInt();
+                            case 2:
+                                System.out.println("1. Libro");
+                                System.out.println("2. Articulo");
+                                System.out.println("3. Curso en linea");
+                                System.out.println("4. Conferencia virtual");
+                                System.out.print("Que tipo de recurso quiere crear: ");
+                                int tipoCurso = sc.nextInt();
 
-                            switch (tipoCurso) {
-                                case 1:
-                                    System.out.println("Ingrese titulo del libro: ");
-                                    String titulo = sc.nextLine();
-                                    System.out.println("Ingrese autor del libro: ");
-                                    String autor = sc.nextLine();
-                                    System.out.println("Ingrese el genero del libro: ");
-                                    String genero = sc.nextLine();
-                                    System.out.println("Ingrese el año de publifcacion:");
-                                    int anio = sc.nextInt();
-                                    System.out.println("Ingrese el estado del libro: ");
-                                    String disponibilidad = sc.nextLine();
+                                sc.nextLine();
+                                switch (tipoCurso) {
+                                    case 1:
+                                        System.out.println("Ingrese titulo del libro: ");
+                                        String titulo = sc.nextLine();
+                                        System.out.println("Ingrese autor del libro: ");
+                                        String autor = sc.nextLine();
+                                        System.out.println("Ingrese el genero del libro: ");
+                                        String genero = sc.nextLine();
+                                        System.out.println("Ingrese el año de publifcacion:");
+                                        int anio = sc.nextInt();
+                                        sc.nextLine();
+                                        System.out.println("Ingrese el estado del libro: ");
+                                        String disponibilidad = sc.nextLine();
 
-                                    //AGREGAR A LA LISTA 
-                                    Libro nuevoLibro = new Libro(titulo, autor, genero, anio);
-                                    libros.add(nuevoLibro);
+                                        //AGREGAR A LA LISTA DE LIBROS
+                                        Libro nuevoLibro = new Libro(titulo, autor, genero, anio, disponibilidad);
+                                        libros.add(nuevoLibro);
 
-                                    break;
-                                default:
-                                    throw new AssertionError();
-                            }
-                            break;
-                        default:
-                            throw new AssertionError();
-                    }
+                                        break;
 
-                    break;
+                                    case 2:
+                                        System.out.println("Ingrese titulo del articulo: ");
+                                        String tituloArti = sc.nextLine();
+                                        System.out.println("Ingrese autor del articulo: ");
+                                        String autorArti = sc.nextLine();
+                                        System.out.println("Ingrese el tema del articulo: ");
+                                        String tema = sc.nextLine();
+                                        System.out.println("Ingrese la fecha de publicacion:");
+                                        String fecha = sc.nextLine();
+                                        System.out.println("Ingrese el acceso en linea: ");
+                                        String acceso = sc.nextLine();
+
+                                        //AGREGAR A LA LISTA DE ARTICULO
+                                        Articulo nuevoArticulo = new Articulo(tituloArti, autorArti, tema, fecha, acceso);
+                                        articulos.add(nuevoArticulo);
+                                        break;
+
+                                    case 3:
+                                        System.out.println("Ingrese nombre del curso: ");
+                                        String curso = sc.nextLine();
+                                        System.out.println("Ingrese INSTRUCTOR del curso: ");
+                                        String autorCurso = sc.nextLine();
+                                        System.out.println("Ingrese la duracion en semanas: ");
+                                        String duracion = sc.nextLine();
+                                        System.out.println("Ingrese la plataforma de enseñanza:");
+                                        String plataforma = sc.nextLine();
+
+                                        //AGREGAR A LA LISTA DE CURSOS
+                                        Cursos_Linea nuevoCurso = new Cursos_Linea(curso, autorCurso, duracion, plataforma);
+                                        cursos.add(nuevoCurso);
+                                        break;
+
+                                    case 4:
+                                        System.out.println("Ingrese titulo de la conferencia: ");
+                                        String tituloConfe = sc.nextLine();
+                                        System.out.println("Ingrese el conferencista: ");
+                                        String conferencista = sc.nextLine();
+                                        System.out.println("Ingrese la fecha: ");
+                                        String fe = sc.nextLine();
+                                        System.out.println("Ingrese la duracion:");
+                                        String dura = sc.nextLine();
+                                        System.out.println("Ingrese el enlace de acceso: ");
+                                        String enlace = sc.nextLine();
+
+                                        //AGREGAR A LA LISTA DE ARTICULO
+                                        Conferencia nuevaConferencia = new Conferencia(tituloConfe, conferencista, fe, dura, enlace);
+                                        conferencias.add(nuevaConferencia);
+                                        break;
+
+                                    default:
+                                        System.out.println("Eso no esta aqui.");
+                                }
+                                break;
+                        }
+
+                    } while (opcBibli != 5);
 
                 default:
                     System.out.println("Este tipo de usuario no este disponible.");

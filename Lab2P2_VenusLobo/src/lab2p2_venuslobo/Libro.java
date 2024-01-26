@@ -12,12 +12,12 @@ public class Libro {
     public String disponibilidad; 
     
     //CONSTRUCTOR
-    public Libro(String titulo, String autor, String genero, int anio) {
+    public Libro(String titulo, String autor, String genero, int anio, String disponibilidad) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero; 
         this.anoPublicacion = anio; 
-        this.disponibilidad = "disponible";
+        this.disponibilidad = disponibilidad;
     }
     
     //MUTADORES
@@ -60,6 +60,12 @@ public class Libro {
     public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
+
+    @Override
+    public String toString() {
+        return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", genero=" + genero + ", anoPublicacion=" + anoPublicacion + ", disponibilidad=" + disponibilidad + '}';
+    }
+    
     
     
 }

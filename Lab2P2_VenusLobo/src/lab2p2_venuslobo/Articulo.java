@@ -8,13 +8,15 @@ public class Articulo {
     public String tituloArti;
     public String autorArti;
     public String fechaPubli;
+    public String tema; 
     public String acceso;
 
-    public Articulo(String tituloArti, String autorArti, String fechaPubli, String acceso) {
+    public Articulo(String tituloArti, String autorArti,String tema, String fechaPubli, String acceso) {
         this.tituloArti = tituloArti;
         this.autorArti = autorArti;
         this.fechaPubli = fechaPubli;
         this.acceso = acceso;
+        this.tema = tema; 
     }
 
     public String getTituloArti() {
