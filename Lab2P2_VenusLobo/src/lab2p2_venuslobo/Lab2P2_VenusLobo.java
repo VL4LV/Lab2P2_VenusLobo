@@ -67,18 +67,38 @@ public class Lab2P2_VenusLobo {
         if (usuarioAutenticado != null) {
             switch (usuarioAutenticado.getTipoUsuario()) {
                 case "estudiante":
-                    System.out.println("Funcionalidad para estudiante");
+                    System.out.println("");
+                    System.out.println("---Bienvenido estudiante---");
+                    System.out.println("1. Listar recursos");
+                    System.out.println("2. Salir");
+                    int opcEstu = sc.nextInt();
+                    
                     break;
 
                 case "profesor":
+                    System.out.println("");
                     System.out.println("Bienvenido profesor");
+                    System.out.println("1. Listar recursos");
+                    System.out.println("2. Crear recursos");
+                    System.out.println("3. Salir");
+                    int opcProfe = sc.nextInt();
+
                     break;
 
                 case "bibliotecario":
-                    System.out.println("Bienvenido bibliotecario");
+                    System.out.println("");
+                    System.out.println("---Bienvenido bibliotecario---");
+                    System.out.println("1. Listar recursos");
+                    System.out.println("2. Crear recursos");
+                    System.out.println("3. Eliminar recursos");
+                    System.out.println("4. Modificar recursos");
+                    System.out.println("5. Salir");
+                    int opcBibli = sc.nextInt();
+                    
                     break;
+                    
                 default:
-                    System.out.println("Funcionalidad no definida para este tipo de usuario.");
+                    System.out.println("Este tipo de usuario no este disponible.");
                     break;
             }
         }
