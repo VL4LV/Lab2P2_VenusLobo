@@ -14,7 +14,7 @@ public class Lab2P2_VenusLobo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
