@@ -289,23 +289,39 @@ public class Lab2P2_VenusLobo {
                         switch (opcBibli) {
                             case 1:
                                 System.out.println("LIBROS");
-                                for (Libro lib : libros) {
-                                    System.out.println(lib.toString());
+                                if (libros.isEmpty()) {
+                                    System.out.println("No hay libros disponibles.");
+                                } else {
+                                    for (Libro lib : libros) {
+                                        System.out.println(lib.toString());
+                                    }
                                 }
 
                                 System.out.println("ARTICULOS");
-                                for (Articulo ar : articulos) {
-                                    System.out.println(ar.toString());
+                                if (articulos.isEmpty()) {
+                                    System.out.println("No hay artículos disponibles.");
+                                } else {
+                                    for (Articulo ar : articulos) {
+                                        System.out.println(ar.toString());
+                                    }
                                 }
 
                                 System.out.println("CURSOS EN LINEA");
-                                for (Cursos_Linea cur : cursos) {
-                                    System.out.println(cur.toString());
+                                if (cursos.isEmpty()) {
+                                    System.out.println("No hay cursos en línea disponibles.");
+                                } else {
+                                    for (Cursos_Linea cur : cursos) {
+                                        System.out.println(cur.toString());
+                                    }
                                 }
 
                                 System.out.println("CONFERENCIAS VIRTUALES");
-                                for (Conferencia co : conferencias) {
-                                    System.out.println(co.toString());
+                                if (conferencias.isEmpty()) {
+                                    System.out.println("No hay conferencias virtuales disponibles.");
+                                } else {
+                                    for (Conferencia co : conferencias) {
+                                        System.out.println(co.toString());
+                                    }
                                 }
 
                                 break;
@@ -416,28 +432,241 @@ public class Lab2P2_VenusLobo {
                                                 if (libros.get(i).getTitulo().equalsIgnoreCase(nombreKill)) {
                                                     libros.remove(i);
                                                     libroEncontrado = true;
-                                                    System.out.println("Mascota eliminada exitosamente.");
+                                                    System.out.println("Libro eliminado exitosamente.");
                                                     break;
                                                 }
                                             }
 
                                             if (!libroEncontrado) {
-                                                System.out.println("No hay ninguna mascota con ese nombre.");
+                                                System.out.println("No hay ninguna libro con ese nombre.");
                                             }
                                         }
                                         break;
 
                                     case 2:
+                                        if (articulos.isEmpty()) {
+                                            System.out.println("No hay ninguna articulo en la lista para eliminar.");
+                                        } else {
+                                            System.out.println("--MOMENTO DE ELIMINAR UN ARTICULO--");
+                                            System.out.print("Ingrese el nombre del articulo  a eliminar: ");
+                                            String nombreKill = sc.nextLine();
+
+                                            boolean artiEncontrado = false;
+                                            for (int i = 0; i < articulos.size(); i++) {
+                                                if (articulos.get(i).getTituloArti().equalsIgnoreCase(nombreKill)) {
+                                                    articulos.remove(i);
+                                                    artiEncontrado = true;
+                                                    System.out.println("Articulo eliminado exitosamente.");
+                                                    break;
+                                                }
+                                            }
+
+                                            if (!artiEncontrado) {
+                                                System.out.println("No hay ninguna articulo con ese nombre.");
+                                            }
+                                        }
                                         break;
 
                                     case 3:
+                                        if (cursos.isEmpty()) {
+                                            System.out.println("No hay ningun curso en la lista para eliminar.");
+                                        } else {
+                                            System.out.println("--MOMENTO DE ELIMINAR UN CURSO--");
+                                            System.out.print("Ingrese el nombre del curso  a eliminar: ");
+                                            String nombreKill = sc.nextLine();
+
+                                            boolean curEncontrado = false;
+                                            for (int i = 0; i < cursos.size(); i++) {
+                                                if (cursos.get(i).getTituloCursos().equalsIgnoreCase(nombreKill)) {
+                                                    cursos.remove(i);
+                                                    curEncontrado = true;
+                                                    System.out.println("Curso eliminado exitosamente.");
+                                                    break;
+                                                }
+                                            }
+
+                                            if (!curEncontrado) {
+                                                System.out.println("No hay ninguna curso con ese nombre.");
+                                            }
+                                        }
                                         break;
 
                                     case 4:
+                                        if (conferencias.isEmpty()) {
+                                            System.out.println("No hay ninguna conferencia en la lista para eliminar.");
+                                        } else {
+                                            System.out.println("--MOMENTO DE ELIMINAR UNA CONFERENCIA--");
+                                            System.out.print("Ingrese el nombre de la conferencia  a eliminar: ");
+                                            String nombreKill = sc.nextLine();
+
+                                            boolean conEncontrado = false;
+                                            for (int i = 0; i < conferencias.size(); i++) {
+                                                if (conferencias.get(i).getTituloConferencia().equalsIgnoreCase(nombreKill)) {
+                                                    conferencias.remove(i);
+                                                    conEncontrado = true;
+                                                    System.out.println("Conferencia eliminado exitosamente.");
+                                                    break;
+                                                }
+                                            }
+
+                                            if (!conEncontrado) {
+                                                System.out.println("No hay ninguna conferencia con ese nombre.");
+                                            }
+                                        }
                                         break;
 
                                 }
 
+                            case 4:
+                                System.out.println("1. Libro");
+                                System.out.println("2. Articulo");
+                                System.out.println("3. Curso en linea");
+                                System.out.println("4. Conferencia virtual");
+                                System.out.print("Que quiere modificar: ");
+                                int modificar = sc.nextInt();
+
+                                switch (modificar) {
+                                    case 1:
+                                        System.out.println("LIBROS");
+                                        if (libros.isEmpty()) {
+                                            System.out.println("No hay libros disponibles.");
+                                        } else {
+                                            for (Libro lib : libros) {
+                                                System.out.println(lib.toString());
+                                            }
+                                        }
+
+                                        if (libros.isEmpty()) {
+                                            System.out.println("No hay ninguna libro en la lista para eliminar.");
+                                        } else {
+                                            System.out.println("--MOMENTO DE ELIMINAR UN LIBRO--");
+                                            System.out.println("Ingrese el tirulo del libro a modificar: ");
+                                            String libroModi = sc.nextLine();
+
+                                            boolean libroEncontrado = false;
+                                            for (int i = 0; i < libros.size(); i++) {
+                                                if (libros.get(i).getTitulo().equalsIgnoreCase(libroModi)) {
+                                                    System.out.println("Ingrese titulo del libro: ");
+                                                    String titulo = sc.nextLine();
+
+                                                    libros.get(i).setTitulo(titulo);
+
+                                                    System.out.println("Ingrese autor del libro: ");
+                                                    String autor = sc.nextLine();
+
+                                                    libros.get(i).setAutor(autor);
+
+                                                    System.out.println("Ingrese el genero del libro: ");
+                                                    String genero = sc.nextLine();
+
+                                                    libros.get(i).setGenero(genero);
+
+                                                    System.out.println("Ingrese el año de publifcacion:");
+                                                    int anio = sc.nextInt();
+
+                                                    libros.get(i).setAnoPublicacion(anio);
+                                                    sc.nextLine();
+
+                                                    System.out.println("Ingrese el estado del libro: ");
+                                                    String disponibilidad = sc.nextLine();
+
+                                                    libros.get(i).setDisponibilidad(disponibilidad);
+                                                    libroEncontrado = true;
+                                                    break;
+                                                }
+                                            }
+
+                                            if (!libroEncontrado) {
+                                                System.out.println("No hay ninguna libro con ese nombre.");
+                                            }
+                                        }
+
+                                        break;
+
+                                    case 2:
+                                        System.out.println("ARTICULOS");
+                                        if (articulos.isEmpty()) {
+                                            System.out.println("No hay artículos disponibles.");
+                                        } else {
+                                            for (Articulo ar : articulos) {
+                                                System.out.println(ar.toString());
+                                            }
+                                        }
+
+                                        if (articulos.isEmpty()) {
+                                            System.out.println("No hay ninguna articulo en la lista para eliminar.");
+                                        } else {
+                                            System.out.println("--MOMENTO DE MODIFICAR UN ARTICULO--");
+                                            System.out.print("Ingrese el nombre del articulo  a eliminar: ");
+                                            String nombreKill = sc.nextLine();
+
+                                            boolean artiEncontrado = false;
+                                            for (int i = 0; i < articulos.size(); i++) {
+                                                if (articulos.get(i).getTituloArti().equalsIgnoreCase(nombreKill)) {
+                                                    System.out.println("Ingrese titulo del articulo: ");
+                                                    String tituloArti = sc.nextLine();
+                                                    
+                                                    articulos.get(i).setTituloArti(tituloArti);
+                                                    
+                                                    System.out.println("Ingrese autor del articulo: ");
+                                                    String autorArti = sc.nextLine();
+                                                    articulos.get(i).setAutorArti(autorArti);
+                                                    
+                                                    System.out.println("Ingrese el tema del articulo: ");
+                                                    String tema = sc.nextLine();
+                                                    articulos.get(i).setTema(tema);
+                                                    
+                                                    System.out.println("Ingrese la fecha de publicacion:");
+                                                    String fecha = sc.nextLine();
+                                                    articulos.get(i).setFechaPubli(fecha);
+                                                    
+                                                    System.out.println("Ingrese el acceso en linea: ");
+                                                    String acceso = sc.nextLine();
+                                                    articulos.get(i).setAcceso(acceso);
+                                                    
+                                                    artiEncontrado = true;
+                                                    System.out.println("Articulo modificado exitosamente.");
+                                                    break;
+                                                }
+                                            }
+
+                                            if (!artiEncontrado) {
+                                                System.out.println("No hay ninguna articulo con ese nombre.");
+                                            }
+                                        }
+                                        break;
+
+                                    case 3:
+                                        System.out.println("CURSOS EN LINEA");
+                                        if (cursos.isEmpty()) {
+                                            System.out.println("No hay cursos en línea disponibles.");
+                                        } else {
+                                            for (Cursos_Linea cur : cursos) {
+                                                System.out.println(cur.toString());
+                                            }
+                                        }
+                                        
+                                        System.out.println("Hasta aqui llegue");
+                                        break;
+
+                                    case 4:
+                                        System.out.println("CONFERENCIAS VIRTUALES");
+                                        if (conferencias.isEmpty()) {
+                                            System.out.println("No hay conferencias virtuales disponibles.");
+                                        } else {
+                                            for (Conferencia co : conferencias) {
+                                                System.out.println(co.toString());
+                                            }
+                                        }
+                                        System.out.println("No llego");
+                                        break;
+
+                                }
+
+                                break;
+
+                            case 5:
+                                System.out.println("Adios");
                                 break;
                         }
 
@@ -447,13 +676,6 @@ public class Lab2P2_VenusLobo {
                     System.out.println("Este tipo de usuario no este disponible.");
                     break;
             }
-        }
-    }
-
-    //METODOS 
-    public static void listas(ArrayList lista) {
-        for (Object t : lista) {
-            System.out.println(lista.indexOf(t) + "- " + t);
         }
     }
 
