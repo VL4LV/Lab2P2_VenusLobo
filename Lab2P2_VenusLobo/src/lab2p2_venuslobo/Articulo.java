@@ -51,4 +51,11 @@ public class Articulo {
         this.acceso = acceso;
     }
 
+    @Override
+    public String toString() {
+        return "Articulo{" + "tituloArti=" + tituloArti + ", autorArti=" + autorArti + ", fechaPubli=" + fechaPubli + ", tema=" + tema + ", acceso=" + acceso + '}';
+    }
+    
+    
+
 }

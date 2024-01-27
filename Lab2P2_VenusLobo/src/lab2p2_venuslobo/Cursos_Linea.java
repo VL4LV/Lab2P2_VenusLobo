@@ -47,6 +47,13 @@ public class Cursos_Linea {
     public void setPlataforma(String plataforma) {
         this.plataforma = plataforma;
     }
+
+    @Override
+    public String toString() {
+        return "Cursos_Linea{" + "tituloCursos=" + tituloCursos + ", instructor=" + instructor + ", duracion=" + duracion + ", plataforma=" + plataforma + '}';
+    }
+    
+    
     
     
     

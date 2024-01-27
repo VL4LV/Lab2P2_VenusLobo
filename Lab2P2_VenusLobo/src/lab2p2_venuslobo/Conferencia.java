@@ -57,6 +57,12 @@ public class Conferencia {
     public void setEnlace(String enlace) {
         this.enlace = enlace;
     }
+
+    @Override
+    public String toString() {
+        return "Conferencia{" + "tituloConferencia=" + tituloConferencia + ", conferencia=" + conferencia + ", fecha=" + fecha + ", duracion=" + duracion + ", enlace=" + enlace + '}';
+    }
+    
     
     
 }

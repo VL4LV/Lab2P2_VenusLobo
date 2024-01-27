@@ -72,44 +72,111 @@ public class Lab2P2_VenusLobo {
         if (usuarioAutenticado != null) {
             switch (usuarioAutenticado.getTipoUsuario()) {
                 case "estudiante":
-                    System.out.println("");
-                    System.out.println("---Bienvenido estudiante---");
-                    System.out.println("1. Listar recursos");
-                    System.out.println("2. Salir");
-                    System.out.print("Que vamos hacer: ");
-                    int opcEstu = sc.nextInt();
+                    int opcEstu;
+
+                    do {
+                        System.out.println("");
+                        System.out.println("---Bienvenido estudiante---");
+                        System.out.println("1. Listar recursos");
+                        System.out.println("2. Salir");
+                        System.out.print("Que vamos hacer: ");
+                        opcEstu = sc.nextInt();
+
+                        switch (opcEstu) {
+                            case 1:
+                                System.out.println("LIBROS");
+                                if (libros.isEmpty()) {
+                                    System.out.println("No hay libros disponibles.");
+                                } else {
+                                    for (Libro lib : libros) {
+                                        System.out.println(lib.toString());
+                                    }
+                                }
+
+                                System.out.println("ARTICULOS");
+                                if (articulos.isEmpty()) {
+                                    System.out.println("No hay artículos disponibles.");
+                                } else {
+                                    for (Articulo ar : articulos) {
+                                        System.out.println(ar.toString());
+                                    }
+                                }
+
+                                System.out.println("CURSOS EN LINEA");
+                                if (cursos.isEmpty()) {
+                                    System.out.println("No hay cursos en línea disponibles.");
+                                } else {
+                                    for (Cursos_Linea cur : cursos) {
+                                        System.out.println(cur.toString());
+                                    }
+                                }
+
+                                System.out.println("CONFERENCIAS VIRTUALES");
+                                if (conferencias.isEmpty()) {
+                                    System.out.println("No hay conferencias virtuales disponibles.");
+                                } else {
+                                    for (Conferencia co : conferencias) {
+                                        System.out.println(co.toString());
+                                    }
+                                }
+
+                                break;
+
+                            case 2:
+                                System.out.println("Adios");
+                                break;
+                        }
+                    } while (opcEstu != 2);
 
                     break;
 
                 case "profesor":
-                    System.out.println("");
-                    System.out.println("Bienvenido profesor");
-                    System.out.println("1. Listar recursos");
-                    System.out.println("2. Crear recursos");
-                    System.out.println("3. Salir");
-                    System.out.print("Que vamos hacer: ");
-                    int opcProfe = sc.nextInt();
-
-                    break;
-
-                case "bibliotecario":
-                    int opcBibli;
+                    int opcProfe;
                     do {
                         System.out.println("");
-                        System.out.println("---Bienvenido bibliotecario---");
+                        System.out.println("---Bienvenido profesor---");
                         System.out.println("1. Listar recursos");
                         System.out.println("2. Crear recursos");
-                        System.out.println("3. Eliminar recursos");
-                        System.out.println("4. Modificar recursos");
-                        System.out.println("5. Salir");
+                        System.out.println("3. Salir");
                         System.out.print("Que vamos hacer: ");
+                        opcProfe = sc.nextInt();
 
-                        opcBibli = sc.nextInt();
-
-                        switch (opcBibli) {
+                        switch (opcProfe) {
                             case 1:
-                                for (Libro lib : libros) {
-                                    System.out.println(lib.toString());
+                                System.out.println("LIBROS");
+                                if (libros.isEmpty()) {
+                                    System.out.println("No hay libros disponibles.");
+                                } else {
+                                    for (Libro lib : libros) {
+                                        System.out.println(lib.toString());
+                                    }
+                                }
+
+                                System.out.println("ARTICULOS");
+                                if (articulos.isEmpty()) {
+                                    System.out.println("No hay artículos disponibles.");
+                                } else {
+                                    for (Articulo ar : articulos) {
+                                        System.out.println(ar.toString());
+                                    }
+                                }
+
+                                System.out.println("CURSOS EN LINEA");
+                                if (cursos.isEmpty()) {
+                                    System.out.println("No hay cursos en línea disponibles.");
+                                } else {
+                                    for (Cursos_Linea cur : cursos) {
+                                        System.out.println(cur.toString());
+                                    }
+                                }
+
+                                System.out.println("CONFERENCIAS VIRTUALES");
+                                if (conferencias.isEmpty()) {
+                                    System.out.println("No hay conferencias virtuales disponibles.");
+                                } else {
+                                    for (Conferencia co : conferencias) {
+                                        System.out.println(co.toString());
+                                    }
                                 }
                                 break;
 
@@ -194,6 +261,183 @@ public class Lab2P2_VenusLobo {
                                     default:
                                         System.out.println("Eso no esta aqui.");
                                 }
+                                break;
+
+                            case 3:
+                                System.out.println("Adios");
+                                break;
+                        }
+
+                    } while (opcProfe != 3);
+
+                    break;
+
+                case "bibliotecario":
+                    int opcBibli;
+                    do {
+                        System.out.println("");
+                        System.out.println("---Bienvenido bibliotecario---");
+                        System.out.println("1. Listar recursos");
+                        System.out.println("2. Crear recursos");
+                        System.out.println("3. Eliminar recursos");
+                        System.out.println("4. Modificar recursos");
+                        System.out.println("5. Salir");
+                        System.out.print("Que vamos hacer: ");
+
+                        opcBibli = sc.nextInt();
+
+                        switch (opcBibli) {
+                            case 1:
+                                System.out.println("LIBROS");
+                                for (Libro lib : libros) {
+                                    System.out.println(lib.toString());
+                                }
+
+                                System.out.println("ARTICULOS");
+                                for (Articulo ar : articulos) {
+                                    System.out.println(ar.toString());
+                                }
+
+                                System.out.println("CURSOS EN LINEA");
+                                for (Cursos_Linea cur : cursos) {
+                                    System.out.println(cur.toString());
+                                }
+
+                                System.out.println("CONFERENCIAS VIRTUALES");
+                                for (Conferencia co : conferencias) {
+                                    System.out.println(co.toString());
+                                }
+
+                                break;
+
+                            case 2:
+                                System.out.println("1. Libro");
+                                System.out.println("2. Articulo");
+                                System.out.println("3. Curso en linea");
+                                System.out.println("4. Conferencia virtual");
+                                System.out.print("Que tipo de recurso quiere crear: ");
+                                int tipoCurso = sc.nextInt();
+
+                                sc.nextLine();
+                                switch (tipoCurso) {
+                                    case 1:
+                                        System.out.println("Ingrese titulo del libro: ");
+                                        String titulo = sc.nextLine();
+                                        System.out.println("Ingrese autor del libro: ");
+                                        String autor = sc.nextLine();
+                                        System.out.println("Ingrese el genero del libro: ");
+                                        String genero = sc.nextLine();
+                                        System.out.println("Ingrese el año de publifcacion:");
+                                        int anio = sc.nextInt();
+                                        sc.nextLine();
+                                        System.out.println("Ingrese el estado del libro: ");
+                                        String disponibilidad = sc.nextLine();
+
+                                        //AGREGAR A LA LISTA DE LIBROS
+                                        Libro nuevoLibro = new Libro(titulo, autor, genero, anio, disponibilidad);
+                                        libros.add(nuevoLibro);
+
+                                        break;
+
+                                    case 2:
+                                        System.out.println("Ingrese titulo del articulo: ");
+                                        String tituloArti = sc.nextLine();
+                                        System.out.println("Ingrese autor del articulo: ");
+                                        String autorArti = sc.nextLine();
+                                        System.out.println("Ingrese el tema del articulo: ");
+                                        String tema = sc.nextLine();
+                                        System.out.println("Ingrese la fecha de publicacion:");
+                                        String fecha = sc.nextLine();
+                                        System.out.println("Ingrese el acceso en linea: ");
+                                        String acceso = sc.nextLine();
+
+                                        //AGREGAR A LA LISTA DE ARTICULO
+                                        Articulo nuevoArticulo = new Articulo(tituloArti, autorArti, tema, fecha, acceso);
+                                        articulos.add(nuevoArticulo);
+                                        break;
+
+                                    case 3:
+                                        System.out.println("Ingrese nombre del curso: ");
+                                        String curso = sc.nextLine();
+                                        System.out.println("Ingrese INSTRUCTOR del curso: ");
+                                        String autorCurso = sc.nextLine();
+                                        System.out.println("Ingrese la duracion en semanas: ");
+                                        String duracion = sc.nextLine();
+                                        System.out.println("Ingrese la plataforma de enseñanza:");
+                                        String plataforma = sc.nextLine();
+
+                                        //AGREGAR A LA LISTA DE CURSOS
+                                        Cursos_Linea nuevoCurso = new Cursos_Linea(curso, autorCurso, duracion, plataforma);
+                                        cursos.add(nuevoCurso);
+                                        break;
+
+                                    case 4:
+                                        System.out.println("Ingrese titulo de la conferencia: ");
+                                        String tituloConfe = sc.nextLine();
+                                        System.out.println("Ingrese el conferencista: ");
+                                        String conferencista = sc.nextLine();
+                                        System.out.println("Ingrese la fecha: ");
+                                        String fe = sc.nextLine();
+                                        System.out.println("Ingrese la duracion:");
+                                        String dura = sc.nextLine();
+                                        System.out.println("Ingrese el enlace de acceso: ");
+                                        String enlace = sc.nextLine();
+
+                                        //AGREGAR A LA LISTA DE ARTICULO
+                                        Conferencia nuevaConferencia = new Conferencia(tituloConfe, conferencista, fe, dura, enlace);
+                                        conferencias.add(nuevaConferencia);
+                                        break;
+
+                                    default:
+                                        System.out.println("Eso no esta aqui.");
+                                }
+                                break;
+
+                            case 3:
+                                System.out.println("1. Libro");
+                                System.out.println("2. Articulo");
+                                System.out.println("3. Curso en linea");
+                                System.out.println("4. Conferencia virtual");
+                                System.out.print("Que quiere borrar: ");
+                                int borrar = sc.nextInt();
+                                sc.nextLine();
+
+                                switch (borrar) {
+                                    case 1:
+                                        if (libros.isEmpty()) {
+                                            System.out.println("No hay ninguna libro en la lista para eliminar.");
+                                        } else {
+                                            System.out.println("--MOMENTO DE ELIMINAR UN LIBRO--");
+                                            System.out.print("Ingrese el nombre del libro  a eliminar: ");
+                                            String nombreKill = sc.nextLine();
+
+                                            boolean libroEncontrado = false;
+                                            for (int i = 0; i < libros.size(); i++) {
+                                                if (libros.get(i).getTitulo().equalsIgnoreCase(nombreKill)) {
+                                                    libros.remove(i);
+                                                    libroEncontrado = true;
+                                                    System.out.println("Mascota eliminada exitosamente.");
+                                                    break;
+                                                }
+                                            }
+
+                                            if (!libroEncontrado) {
+                                                System.out.println("No hay ninguna mascota con ese nombre.");
+                                            }
+                                        }
+                                        break;
+
+                                    case 2:
+                                        break;
+
+                                    case 3:
+                                        break;
+
+                                    case 4:
+                                        break;
+
+                                }
+
                                 break;
                         }
 
